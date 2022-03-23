@@ -13,6 +13,8 @@ public class HeavyWeightScale : MonoBehaviour
 
     #region Settings
     public FloatValue unit = new FloatValue{value = 1f};
+    public Collider[] collidersToIgnore;
+    public float roundUnit = 0.1f;
     #endregion
 
     #region Private Fields
@@ -34,6 +36,13 @@ public class HeavyWeightScale : MonoBehaviour
             _trayPos = tray.position;
 
         value.value = 0;
+	
+	Collider collider = GetComponent<Collider>();
+
+	foreach(Collider col in collidersToIgnore)
+	{
+		Physics.IgnoreCollision(collider,col);
+	}
     }
 
     private void OnCollisionStay(Collision other)
@@ -51,7 +60,7 @@ public class HeavyWeightScale : MonoBehaviour
         }
 
          _wg = Mathf.Lerp(_wg,Mathf.Round(_lastWeightSum / 2f), Time.fixedDeltaTime * 10f);    
-        value.value = (Mathf.Round(_wg/0.1f) * 0.1f) * unit.value;
+        value.value = (Mathf.Round(_wg/roundUnit) * roundUnit) * unit.value;
 
         _rigidbody.isKinematic = _fm % 5 != 0;
         _fm++;
