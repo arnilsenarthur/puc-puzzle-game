@@ -222,37 +222,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPart: {fileID: 729172847965078558}
-  pressed: 0
+  pressed:
+    fixedValue: 0
+    variableValue: {fileID: 0}
+  beingPressed: 0
   onPress:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 01ef43eeb43133241be8e7078659f832, type: 2}
-        m_TargetAssemblyTypeName: Game.Data.Variable`1[[System.Boolean, mscorlib
-        m_MethodName: set_Value
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onRelease:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 01ef43eeb43133241be8e7078659f832, type: 2}
-        m_TargetAssemblyTypeName: Game.Data.Variable`1[[System.Boolean, mscorlib
-        m_MethodName: set_Value
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   springForce: 10
   stayPressed: 0
   relaseAfter: 0
