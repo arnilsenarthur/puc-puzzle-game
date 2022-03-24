@@ -19,6 +19,8 @@ namespace Props
         #region State
         public FloatValue value;
         public float push;
+        public float targetWeight;
+        public BoolValue targetWeightResponse;
         #endregion
 
         #region Private Variables
@@ -44,6 +46,8 @@ namespace Props
             v = Mathf.Round(v / unit) * unit;
 
             value.value = Mathf.Lerp(value.value, v, Time.fixedDeltaTime * 50f);
+
+            targetWeightResponse.value = value.value == targetWeight;
 
             rigidbody.angularVelocity = Vector3.zero;
         }

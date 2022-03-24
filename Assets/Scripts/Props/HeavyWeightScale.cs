@@ -15,6 +15,8 @@ public class HeavyWeightScale : MonoBehaviour
     public FloatValue unit = new FloatValue{value = 1f};
     public Collider[] collidersToIgnore;
     public float roundUnit = 0.1f;
+    public float targetWeight;
+    public BoolValue targetWeightResponse;
     #endregion
 
     #region Private Fields
@@ -61,6 +63,8 @@ public class HeavyWeightScale : MonoBehaviour
 
          _wg = Mathf.Lerp(_wg,Mathf.Round(_lastWeightSum / 2f), Time.fixedDeltaTime * 10f);    
         value.value = (Mathf.Round(_wg/roundUnit) * roundUnit) * unit.value;
+
+        targetWeightResponse.value = value.value == targetWeight;
 
         _rigidbody.isKinematic = _fm % 5 != 0;
         _fm++;

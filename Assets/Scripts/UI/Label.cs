@@ -22,20 +22,23 @@ namespace Game.UI
         public string Text
         {
             get
-            {             
+            {  
+                if(_text == null)
+                    _text = GetComponent<TMP_Text>();           
                 return _text.text;
             }
 
             set
             {
-
+                if(_text == null)
+                    _text = GetComponent<TMP_Text>();
                 _text.text = value;
             }
         }
 
         public override void OnEnable()
         {
-            _text = GetComponent<TMP_Text>();
+            
             //Language.OnChange.AddListener(OnValueChanged);
             base.OnEnable();
         }

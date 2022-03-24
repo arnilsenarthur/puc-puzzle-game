@@ -28,7 +28,7 @@ namespace Props
             Vector3 target = _startPos + Mathf.Sin(Time.time * Mathf.Deg2Rad * 60f) * offset;
             //currentMove = transform.position - target;
             _rigidbody.MovePosition(target);
-            _rigidbody.MoveRotation(transform.rotation * Quaternion.Euler(0f, Time.fixedDeltaTime * 15f, 0f));
+            //_rigidbody.MoveRotation(transform.rotation * Quaternion.Euler(0f, Time.fixedDeltaTime * 15f, 0f));
         }
     }
 }
