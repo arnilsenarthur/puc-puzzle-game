@@ -13778,7 +13778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4664414922794105480, guid: 1a39a9bdbe69ff74a86b3287d9f7e555, type: 3}
       propertyPath: targetWeight
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4664414922794105480, guid: 1a39a9bdbe69ff74a86b3287d9f7e555, type: 3}
       propertyPath: value.variableValue
