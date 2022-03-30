@@ -95,6 +95,9 @@ public class Human : MonoBehaviour
 
         Rigidbody body = hit.collider.attachedRigidbody;
 
+        if(hit.collider.gameObject.tag == "Grabbable")
+            return;
+
         if (hit.normal.y < -0.6f)
         {
             velocity.y = 0f;
