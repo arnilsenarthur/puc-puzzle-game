@@ -1,5 +1,4 @@
 using UnityEngine;
-using Props;
 
 public class HumanController : MonoBehaviour
 {
@@ -60,26 +59,6 @@ public class HumanController : MonoBehaviour
         _rotY += Input.GetAxis("Mouse Y") * lookSpeed;
         _rotY = Mathf.Clamp(_rotY, -90, 90);
         camera.transform.localEulerAngles = new Vector3(-_rotY, 0, 0);
-
-
-        //Get object under mouse
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (Physics.Raycast(ray, out hit, 4f))
-            {
-                MouseButton button = hit.collider.gameObject.GetComponent<MouseButton>();
-                
-                if(button == null)
-                     button = hit.collider.GetComponentInChildren<MouseButton>();
-                
-                if (button != null)
-                {
-                    button.OnClick();
-                }
-            }
-        }
     }
     #endregion
 }

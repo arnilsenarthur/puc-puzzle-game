@@ -95,8 +95,12 @@ public class Human : MonoBehaviour
 
         Rigidbody body = hit.collider.attachedRigidbody;
 
+       
+
         if(hit.collider.gameObject.tag == "Grabbable")
             return;
+
+        
 
         if (hit.normal.y < -0.6f)
         {
@@ -105,22 +109,10 @@ public class Human : MonoBehaviour
 
         if (body == null || body.isKinematic) return;
 
-        if (hit.moveDirection.y < -0.3f)
-        {
-            if (body.GetComponentInParent<Props.Button>() != null)
-            {
-                body.velocity = Vector3.down * _pushPower;
-            }
 
-            return;
-        }
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, hit.moveDirection.y, hit.moveDirection.z);
 
-        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
-
-        if (body.GetComponentInParent<Props.Button>() != null)
-            body.velocity = pushDir * 0.5f;
-        else
-            body.velocity = pushDir * _pushPower;
+        body.velocity = pushDir * _pushPower;
     }
     #endregion
 }
